@@ -59,18 +59,30 @@ function addTrail(trail) {
 
     var directionsLink = `https://maps.google.com?daddr=${lat},${long}`;
 
-    var trailDiv = $("<div>").addClass("row mb-2");
-    var imageColDiv = $("<div>").addClass("col-1");
-    var contentColDiv = $("<div>").addClass("col-11");
-    trailDiv.append(imageColDiv);
-    trailDiv.append(contentColDiv);
-    var imageElement = $(`<img src="${image ? image : "assets/images/mountain_placeholder.png"}" width=100 height=100/>`);
+    var trailDiv = $("<div>").addClass("m-2");
+    var row = $("<div>").addClass("row");
+    var imageColDiv = $("<div>").addClass("col image-col");
+    var contentColDiv = $("<div>").addClass("col");
+    row.append(imageColDiv);
+    row.append(contentColDiv);
+    trailDiv.append(row);
+    var imageElement = $(`<img src="${image ? image : "assets/images/mountain_placeholder.png"}" width=100px height=100px/>`);
     $(imageElement).css("border-radius", 8);
+    imageElement.addClass("p-0 m-0");
     imageColDiv.append(imageElement);
-    contentColDiv.append($("<div>").addClass("text-left").text(name));
-    contentColDiv.append($("<div>").addClass("text-left").html(`<a href="${directionsLink}" target="_blank">Directions</a>`));
+    contentColDiv.append($("<div>").addClass("text-left").html("<b>Name:</b> " + name));
+    contentColDiv.append($("<div>").addClass("text-left").html("<b>Location:</b> " + location));
+    contentColDiv.append($("<div>").addClass("text-left").html(`<b>Difficulty</b>: ${difficulty}`));
+    contentColDiv.append($("<div>").addClass("text-left").html("<b>Length:</b> " + length + " mi"));
+    var statusText = "<b>Status:</b> " + conditionStatus;
+    if (conditionDetails) {
+        statusText += "1 - " + conditionDetails;
+    }
+    contentColDiv.append($("<div>").addClass("text-left").html(statusText));
+    contentColDiv.append($("<div>").addClass("text-left").html("<b>Description:</b> " + summary));
+    imageColDiv.append($("<div>").addClass("text-center").html(`<small>${rating}★ (${numberOfRatings})</small>`));
+    imageColDiv.append($("<div>").addClass("text-center ").html(`<small><a href="${directionsLink}" target="_blank">Directions</a></small>`));
     $("#trails").append(trailDiv);
-    // TODO: Handle no image
 
     
     // console.log("--------------------------------------------");
@@ -105,4 +117,5 @@ window.onload = function (event) {
 
     console.log(`Coordinate: (${coordinate.lat}, ${coordinate.long})`);
     getTrails(coordinate.lat, coordinate.long);
+    $("#trails").addClass("mx-auto");
 }
