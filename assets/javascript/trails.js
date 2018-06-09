@@ -1,11 +1,9 @@
 function getTrails(lat, long, maxDistance = 10) {
-    console.log(`(${lat}, ${long})`);
     var query = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}&maxDistance=${maxDistance}&sort="distance"&key=200282203-1d83dafe12170bd3d0349c29fafc90b9`
     $.ajax({
         url: query,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
         for (trail of response.trails) {
             addTrail(trail);
         }
@@ -59,17 +57,4 @@ function addTrail(trail) {
     imageColDiv.append($("<div>").addClass("text-center").html(`<small>${rating}★ (${numberOfRatings})</small>`));
     imageColDiv.append($("<div>").addClass("text-center ").html(`<small><a href="${directionsLink}" target="_blank">Directions</a></small>`));
     $("#trails").append(trailDiv);
-}
-
-window.onload = function (event) {
-    console.log("Loaded!");
-    var coordinate = latLong("84094");
-    if (coordinate == undefined) {
-        console.log("Invalid zip code!");
-        return;
-    }
-
-    console.log(`Coordinate: (${coordinate.lat}, ${coordinate.long})`);
-    getTrails(coordinate.lat, coordinate.long);
-    $("#trails").addClass("mx-auto");
 }
