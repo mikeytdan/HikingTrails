@@ -38,13 +38,18 @@
                 <form id="search-form">
 
                     <label for="search-input">
-                        <strong>Zip Code Search:</strong>
+                        <strong>Zip Code Search: </strong>
                     </label>
 
                     <i class="fa fa-search">
                         <input type="text" id="search-input">
+                        <input type="submit" id="submit">
                     </i>
+                    
+                    <p id="zip-error"></p>
+
                 </form>
+
                 <div class="row">
 
                     <div id="weather" class="col-md" style="text-align: center">
@@ -52,14 +57,9 @@
                     </div>
 
 
-                    <div id="UV Index" class="col-md">
+                    <div id="uv-index" class="col-md">
                         <strong>UV Index (UVI):</strong>
                     </div>
-
-
-                    <!-- <div id="air quality index" class="col-md"> -->
-                    <!-- <strong>Air Quality (AQI):</strong> -->
-                    <!-- </div> -->
 
                 </div>
 
@@ -67,24 +67,8 @@
 
             <br>
 
-
-
-
             <div id="trails" class="container mx-auto text-center p-0 m-0">
-                <u>
-                    <!-- <h1 class="text-center">Hikes</h1> -->
-                </u>
             </div>
-
-
-
-
-            <p id="zipcode"></p>
-
-            </a>
-
-        <div id="trails">
-        </div>
 </body>
 
 </html>

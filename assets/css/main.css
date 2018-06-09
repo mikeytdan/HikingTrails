@@ -3,6 +3,12 @@ body {
     background-repeat:no-repeat;
     background-size:cover;
     color: white;
+    text-shadow: 2px 2px #555555;
+}
+
+a {
+    color: rgb(138, 255, 105);
+    text-shadow: 2px 2px rgb(0, 91, 36);
 }
 
 h1 {
@@ -12,9 +18,14 @@ h1 {
 }
 
 p {
-    font-family: 'Permanent Marker';
+    /* font-family: 'Permanent Marker';
     text-align: left;
-    font-size: 15px;
+    font-size: 15px; */
+}
+
+#zip-error {
+    color: rgb(213, 51, 51);
+    text-shadow: 2px 2px rgb(80, 0, 0);
 }
 
 #search-form {
