@@ -35,7 +35,7 @@ function addTrail(trail) {
 
     var directionsLink = `https://maps.google.com?daddr=${lat},${long}`;
 
-    var trailDiv = $("<div>").addClass("m-2");
+    var trailDiv = $("<div>").addClass("m-2 text-light");
     var row = $("<div>").addClass("row");
     var imageColDiv = $("<div>").addClass("col image-col");
     var contentColDiv = $("<div>").addClass("col");
