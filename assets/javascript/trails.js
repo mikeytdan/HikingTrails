@@ -12,36 +12,12 @@ function getTrails(lat, long, maxDistance = 10) {
     });
 }
 
-// ascent: 2592
-// conditionDate: "2018-06-05 00:00:00"
-// conditionDetails: ""
-// conditionStatus: "All Clear"
-// descent: -2592
-// difficulty: "blueBlack"
-// high: 8895
-// id: 7002420
-// imgMedium: "https://cdn-files.apstatic.com/hike/7010578_medium_1453489946.jpg"
-// imgSmall: "https://cdn-files.apstatic.com/hike/7010578_small_1453489946.jpg"
-// imgSmallMed: "https://cdn-files.apstatic.com/hike/7010578_smallMed_1453489946.jpg"
-// imgSqSmall: "https://cdn-files.apstatic.com/hike/7010578_sqsmall_1453489946.jpg"
-// latitude: 40.6327
-// length: 7
-// location: "Cottonwood Heights, Utah"
-// longitude: -111.7226
-// low: 6307
-// name: "Lake Blanche Trail"
-// starVotes: 29
-// stars: 4.7
-// summary: "Epic views along this steep route, which has become a favorite in the Wasatch Range."
-// type: "Featured Hike"
-// url: "https://www.hikingproject.com/trail/7002420/lake-blanche-trail"
-
 function addTrail(trail) {
-    var id = trail.id;
+    // var id = trail.id;
     var name = trail.name;
     var summary = trail.summary;
     var difficulty = trail.difficulty;
-    var url = trail.url;
+    // var url = trail.url;
     var rating = trail.stars;
     var numberOfRatings = trail.starVotes;
     var location = trail.location;
@@ -51,11 +27,11 @@ function addTrail(trail) {
     var length = trail.length;
     var conditionStatus = trail.conditionStatus;
     var conditionDetails = trail.conditionDetails;
-    var conditionDate = trail.conditionDate;
-    var ascent = trail.ascent;
-    var descent = trail.descent;
-    var low = trail.low;
-    var high = trail.high;
+    // var conditionDate = trail.conditionDate;
+    // var ascent = trail.ascent;
+    // var descent = trail.descent;
+    // var low = trail.low;
+    // var high = trail.high;
 
     var directionsLink = `https://maps.google.com?daddr=${lat},${long}`;
 
@@ -83,28 +59,6 @@ function addTrail(trail) {
     imageColDiv.append($("<div>").addClass("text-center").html(`<small>${rating}★ (${numberOfRatings})</small>`));
     imageColDiv.append($("<div>").addClass("text-center ").html(`<small><a href="${directionsLink}" target="_blank">Directions</a></small>`));
     $("#trails").append(trailDiv);
-
-    
-    // console.log("--------------------------------------------");
-    // console.log("name: " + name);
-    // console.log("summary: " + summary);
-    // console.log("difficulty: " + difficulty);
-    // console.log("url: " + url);
-    // console.log("rating: " + rating);
-    // console.log("numberOfRatings: " + numberOfRatings);
-    // console.log("location: " + location);
-    // console.log("image: " + image);
-    // console.log("lat: " + lat);
-    // console.log("long: " + long);
-    // console.log("length: " + length);
-    // console.log("conditionStatus: " + conditionStatus);
-    // console.log("conditionDetails: " + conditionDetails);
-    // console.log("conditionDate: " + conditionDate);
-    // console.log("ascent: " + ascent);
-    // console.log("descent: " + descent);
-    // console.log("low: " + low);
-    // console.log("high: " + high);
-    // console.log("--------------------------------------------");
 }
 
 window.onload = function (event) {
