@@ -4,39 +4,87 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nature Hikes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.5.0/papaparse.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
     <script src="assets/javascript/zipCode.js"></script>
     <script src="assets/javascript/trails.js"></script>
     <script src="assets/javascript/main.js"></script>
+
 </head>
 
 <body>
-    <div class="jumbotron text-center">
+    <div class="container" style="text-justify: auto">
+        <!-- <div class="jumbotron text-center"> -->
         <h1>Nature Hikes</h1>
-        <p>Welcome to the "Nature Hikes" web page! This site provides an easy and quick way to find hikes in your location.
+        <p> Welcome to the "Nature Hikes" web page! This site provides an easy and quick way to find hikes in your location.
             Just submit your zip code below, in the area where you want to hike. A list of hikes will be provided within
             a 5 mile radius from your zip code location. Trails are sorted by easiest to hardest, just click on the trail
-            of interest. Current weather, air quality, and UV index are provided, to guide you to the most satifying experience
-            ever!
+            of interest. Current weather and UV index are provided, to guide you to the most satifying experience ever!
         </p>
+        <div class="container">
+            <div id="searchdata">
 
-        <p id="zipcode"></p>
-        
-        
+                <div id="search-view"></div>
+                <div id="buttons-view"></div>
 
-        <img src="images/" ,="" alt="" id="">
-        </a>
+                <form id="search-form">
 
-        
+                    <label for="search-input">
+                        <strong>Zip Code Search:</strong>
+                    </label>
+
+                    <i class="fa fa-search">
+                        <input type="text" id="search-input">
+                    </i>
+                </form>
+                <div class="row">
+
+                    <div id="weather" class="col-md" style="text-align: center">
+                        <strong>Weather(F):</strong>
+                    </div>
+
+
+                    <div id="UV Index" class="col-md">
+                        <strong>UV Index (UVI):</strong>
+                    </div>
+
+
+                    <!-- <div id="air quality index" class="col-md"> -->
+                    <!-- <strong>Air Quality (AQI):</strong> -->
+                    <!-- </div> -->
+
+                </div>
+
+            </div>
+
+            <br>
+
+
+
+
+            <div id="trails" class="container mx-auto text-center p-0 m-0">
+                <u>
+                    <!-- <h1 class="text-center">Hikes</h1> -->
+                </u>
+            </div>
+
+
+
+
+            <p id="zipcode"></p>
+
+            </a>
+
         <div id="trails">
         </div>
-    </div>
 </body>
 
 </html>
