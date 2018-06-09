@@ -32,7 +32,7 @@ function getWeather(lat, long) {
         var condition = response.weather[0].main;
         console.log(condition);
 
-        // what I will do to add the weather data to the screen
+        //add the weather data to the screen
         $("#weather").text("The current weather is: " + weather);
         $("#weather").append("<p>The conditions are: " + condition + " for hiking!</p>");
     });
@@ -41,7 +41,7 @@ function getWeather(lat, long) {
 }
 
 function updatedUVIndex(lat, long) {
-    //uv index by zip code - forecast so won't change with time of day
+    //uv index by zip code
     // https://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVDAILY/ZIP/20050/JSON
     var queryUVIndex = "https://api.openweathermap.org/data/2.5/uvi?appid=19c1678d8290bb9850e1fdc1681c0dd7&lat=" +
     lat + "&lon=" + long;
@@ -67,14 +67,18 @@ function updatedAirPollution(lat, long) {
      var queryAirPollution = "https://www.airnowapi.org/aq/forecast/latLong/?format=application/json&latitude=" + 
      lat + "&longitude=" + long + "&API_KEY=FA631898-16EF-4A6B-A039-8839489DC026";
 
+
     $.ajax({
         url: queryAirPollution,
-        method: "GET"
+        method: "GET", 
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(function (response) {
         console.log(response);
 
-        var airPollution = response[0].AQI;
-        console.log(airPollution);
+        // var airPollution = response[0].AQI;
+        // console.log(airPollution);
 
         var AQICategory = response[0].Category.Name;
         console.log(AQICategory);
@@ -83,11 +87,14 @@ function updatedAirPollution(lat, long) {
         console.log(AQIAction);
 
         // if AQI = -1, then display the category instead; -1 = no data
+        // if(airPollution === -1) {
+        //     airPollution = "no AQI index today";
+        //     console.log(airPollution);
+        // }
        
 
         // adding data to the screen dynamically
-        $("#air-pollution").text("The Air Quality Indext today is: " + airPollution);
-        $("#air-pollution").append("<p>The air quality today is: " + AQICategory + "</p>");
+        $("#air-pollution").text("The air quality today is: " + AQICategory);
         $("#air-pollution").append("<p>" + AQIAction + "</p>");
 
     })
