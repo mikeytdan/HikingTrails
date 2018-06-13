@@ -15,7 +15,6 @@ window.onload = function (event) {
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
-        $("#quotes-view").hide();
 
         $("#trails").empty();
         var inputText = $("#search-input").val().trim();
@@ -27,6 +26,7 @@ window.onload = function (event) {
             return;
         }
 
+        $("#quotes-view").hide();
         $("#search-input").val("");
         getTrails(coordinate.lat, coordinate.long);
         getWeather(coordinate.lat, coordinate.long);
