@@ -1,7 +1,21 @@
+var quotes = [
+    "In every walk with nature, one receives far more than he seeks. - John Muir",
+    "Mountains have a way of dealing with overconfidence - Nemann Buhl",
+    "Hiking is the best workout! You can hike for three hours and not even realize you're working out. And, hiking alone lets me have some time to myself. - Jamie Luner",
+    "Thousands of tired, nerve-shaken, over-civilized people are beginning to find out that going to the mountains is going home; that wildness is a necessity. - John Muir",
+    "May your trails be crooked, winding, lonesome, dangerous, leading to the most amazing view. May your mountains rise into and above the clouds. - Edward Abbey",
+    "You need mountains, long staircases don't make good hikers. - Amit Kalantri",
+    "I like being near the top of a mountain. One can’t get lost here. - Wislawa Szymborska",
+    "Mountains are the cathedrals where I practice my religion. - Anatoli Boukreev"
+]
+
 window.onload = function (event) {
+
+    $("#quotes-view").text(quotes[Math.floor(Math.random() * quotes.length)]);
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
+        $("#quotes-view").hide();
 
         $("#trails").empty();
         var inputText = $("#search-input").val().trim();
