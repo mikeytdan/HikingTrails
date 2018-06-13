@@ -15,7 +15,6 @@ window.onload = function (event) {
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
-        $("#quotes-view").hide();
 
         $("#trails").empty();
         var inputText = $("#search-input").val().trim();
@@ -27,6 +26,7 @@ window.onload = function (event) {
             return;
         }
 
+        $("#quotes-view").hide();
         $("#search-input").val("");
         getTrails(coordinate.lat, coordinate.long);
         getWeather(coordinate.lat, coordinate.long);
@@ -52,8 +52,8 @@ function getWeather(lat, long) {
         var condition = response.weather[0].main;
 
         //add the weather data to the screen
-        $("#weather").text("The current weather is: " + weather + "F°");
-        $("#weather").append("<p>The conditions are: " + condition + " for hiking!</p>");
+        $("#weather").html("The <b>current weather</b> is: <b>" + weather + "</b>F°");
+        $("#weather").append("<p>The <b>conditions</b> are: <b>" + condition + "</b>");
     });
 
 }
@@ -70,8 +70,8 @@ function updatedUVIndex(lat, long) {
         var UVIndex = response.value;
 
         // Adding the data to the screen dynamically
-        $("#uv-index").text("The UV Index is: " + UVIndex);
-        $("#uv-index").append("<p> Low = 0-2; moderate = 3-5; high = 6-7; very high = 8-10; extreme = 11+</p>");
+        $("#uv-index").html("The <b>UV Index</b> is: <b>" + UVIndex + "</b>");
+        $("#uv-index").append("<br><small>(Low = 0-2; moderate = 3-5; high = 6-7; very high = 8-10; extreme = 11+)</small>");
         //https://www.epa.gov/sunsafety/uv-index-scale-1
     });
 

@@ -17,17 +17,22 @@ h1 {
     font-size: 72px;
 }
 
+#uv-index, #weather {
+    color: rgb(255, 255, 188)
+}
+
 #quotes-view {
     font-size: 32px;
 }
 
 #zip-error {
-    color: rgb(213, 51, 51);
+    color: rgb(244, 132, 132);
     text-shadow: 2px 2px rgb(80, 0, 0);
 }
 
-#search-form {
-    margin-left: 350px;
+#search-form, #zip-error {
+  display: flex;
+  justify-content: center;
 }
 
 #search-view {
