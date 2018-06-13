@@ -24,45 +24,38 @@
     <div class="container" style="text-justify: auto">
         <!-- <div class="jumbotron text-center"> -->
         <h1>Nature Hikes</h1>
-        <p> Welcome to the "Nature Hikes" web page! This site provides an easy and quick way to find hikes in your location.
-            Just submit your zip code below, in the area where you want to hike. A list of hikes will be provided within
-            a 5 mile radius from your zip code location. Trails are sorted by easiest to hardest, just click on the trail
-            of interest. Current weather and UV index are provided, to guide you to the most satifying experience ever!
+        <p>
+            Welcome to "Nature Hikes" web site! The sky is the limit when it comes to hiking outdoors, but who has time to search for that "perfect" trail? This <i>fast and easy-to-use</i> App gives you a list of trails within a 5-mile radius of your zip code destination. Just enter your zip code below, and select a trail that best fits your desire (location, difficulty, and/or length). Weather conditions and UV index are provided.
         </p>
+        <br>
         <div class="container">
             <div id="searchdata">
 
                 <div id="search-view"></div>
                 <div id="buttons-view"></div>
 
-                <form id="search-form">
+                <form id="search-form" class="mb-4">
 
-                    <label for="search-input">
-                        <strong>Zip Code Search: </strong>
-                    </label>
-
-                    <i class="fa fa-search">
-                        <input type="text" id="search-input">
-                        <input type="submit" id="submit">
+                    <i class="fa fa-search px-0">
+                        <input type="text" id="search-input" class="px-0" placeholder="Enter Zip Code">
+                        <input type="submit" id="submit" class="px-1">
                     </i>
 
                     <p id="zip-error"></p>
 
                 </form>
 
-                <div class="row">
+                <!-- <div class="row"> -->
 
-                    <div id="weather" class="col-md" style="text-align: center">
-                        <strong>Weather(F):</strong>
+                    <div id="weather" class="" style="text-align: center">
                     </div>
 
 
-                    <div id="uv-index" class="col-md">
-                        <strong>UV Index (UVI):</strong>
+                    <div id="uv-index" class="" style="text-align: center">
                     </div>
 
-                </div>
-                
+                <!-- </div> -->
+
                 <div id="quotes-view" class="text-center font-italic p-4 mt-5">
                     <div id="quote">"Hiking is my favorite thing!" - Some Person</div>
                     <small>http://www.wiseoldsayings.com/hiking-quotes/</small>

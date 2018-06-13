@@ -17,6 +17,10 @@ h1 {
     font-size: 72px;
 }
 
+#uv-index, #weather {
+    color: rgb(255, 255, 188)
+}
+
 #quotes-view {
     font-size: 32px;
 }
@@ -27,7 +31,8 @@ h1 {
 }
 
 #search-form {
-    margin-left: 350px;
+  display: flex;
+  justify-content: center;
 }
 
 #search-view {
