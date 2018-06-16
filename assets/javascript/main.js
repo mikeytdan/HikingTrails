@@ -11,7 +11,9 @@ var quotes = [
 
 window.onload = function (event) {
 
-    $("#quotes-view").text(quotes[Math.floor(Math.random() * quotes.length)]);
+    var quotesView = $("#quotes-view");
+    quotesView.html(quotes[Math.floor(Math.random() * quotes.length)]);
+    quotesView.append($("<h5>").html(`<br><u><a href="http://www.wiseoldsayings.com/hiking-quotes/" target="#">www.wiseoldsayings.com</a></u>`));
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
